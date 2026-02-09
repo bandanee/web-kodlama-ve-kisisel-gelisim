@@ -115,63 +115,390 @@ fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>&lt;wbr&gt;</td>
-          <td>Defines a possible line-break within text.</td>
-          <td><pre>&lt;p&gt;This is a very<wbr>longword&lt;/p&gt;</pre></td>
-          <td>HTML / Metin</td>
-        </tr>
-        <tr>
-          <td>&lt;pre&gt;</td>
-          <td>Represents preformatted text, preserves whitespace and line breaks.</td>
-          <td><pre>&lt;pre&gt;Line 1
-Line 2
-Line 3&lt;/pre&gt;</pre></td>
-          <td>HTML / Metin</td>
-        </tr>
-        <tr>
-          <td>&lt;code&gt;</td>
-          <td>Represents inline code snippets inside text.</td>
-          <td><pre>&lt;p&gt;Use &lt;code&gt;alert('Hi')&lt;/code&gt;&lt;/p&gt;</pre></td>
-          <td>HTML / Kod</td>
-        </tr>
-        <tr>
-          <td>&lt;strong&gt;</td>
-          <td>Defines important or bold text.</td>
-          <td><pre>&lt;p&gt;&lt;strong&gt;Important!&lt;/strong&gt;&lt;/p&gt;</pre></td>
-          <td>HTML / Metin</td>
-        </tr>
-        <tr>
-          <td>&lt;em&gt;</td>
-          <td>Defines emphasized text (usually italic).</td>
-          <td><pre>&lt;p&gt;&lt;em&gt;Emphasis&lt;/em&gt;&lt;/p&gt;</pre></td>
-          <td>HTML / Metin</td>
-        </tr>
-        <tr>
-          <td>&lt;br&gt;</td>
-          <td>Inserts a line break.</td>
-          <td><pre>&lt;p&gt;Line1&lt;br&gt;Line2&lt;/p&gt;</pre></td>
-          <td>HTML / Metin</td>
-        </tr>
+<tr>
+  <td>&lt;!-- ... --&gt;</td>
+  <td>HTML yorumlarını tanımlar, tarayıcı tarafından görünmez.</td>
+  <td><pre>&lt;!-- Bu bir yorumdur --&gt;</pre></td>
+  <td>HTML / Yorum</td>
+</tr>
+<tr>
+  <td>&lt;!DOCTYPE&gt;</td>
+  <td>Belgenin türünü tanımlar ve tarayıcıya HTML sürümünü bildirir.</td>
+  <td><pre>&lt;!DOCTYPE html&gt;</pre></td>
+  <td>HTML / Belge Yapısı</td>
+</tr>
+<tr>
+  <td>&lt;a&gt;</td>
+  <td>Bir bağlantı (link) tanımlar; kullanıcıyı başka bir sayfaya veya siteye yönlendirir.</td>
+  <td><pre>&lt;a href="https://example.com"&gt;Example&lt;/a&gt;</pre></td>
+  <td>HTML / Bağlantı</td>
+</tr>
+<tr>
+  <td>&lt;abbr&gt;</td>
+  <td>Kısaltma veya akronim tanımlar; üzerine gelindiğinde tam açılımı gösterilebilir.</td>
+  <td><pre>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</pre></td>
+  <td>HTML / Metin</td>
+</tr>
+<tr>
+  <td>&lt;acronym&gt;</td>
+  <td>HTML5’te desteklenmez. Kısaltma veya akronim tanımlamak için &lt;abbr&gt; kullanın.</td>
+  <td><pre>&lt;acronym title="World Health Organization"&gt;WHO&lt;/acronym&gt;</pre></td>
+  <td>HTML / Metin</td>
+</tr>
+<tr>
+  <td>&lt;address&gt;</td>
+  <td>Belgenin yazarına veya sahibine ait iletişim bilgilerini tanımlar.</td>
+  <td><pre>&lt;address&gt;
+Okan Kaplan<br>
+info@example.com<br>
+www.example.com
+&lt;/address&gt;</pre></td>
+  <td>HTML / İletişim</td>
+</tr>
+<tr>
+  <td>&lt;applet&gt;</td>
+  <td>HTML5’te desteklenmez. Gömülü applet için &lt;embed&gt; veya &lt;object&gt; kullanın.</td>
+  <td><pre>&lt;applet code="MyApplet.class" width="300" height="300"&gt;&lt;/applet&gt;</pre></td>
+  <td>HTML / Gömülü Uygulama</td>
+</tr>
+<tr>
+  <td>&lt;area&gt;</td>
+  <td>Bir resim haritası (image map) içindeki tıklanabilir alanı tanımlar.</td>
+  <td><pre>&lt;img src="example.jpg" usemap="#map1"&gt;
+&lt;map name="map1"&gt;
+  &lt;area shape="rect" coords="34,44,270,350" href="page.html" alt="Link"&gt;
+&lt;/map&gt;</pre></td>
+  <td>HTML / Resim Haritası</td>
+</tr>
+<tr>
+  <td>&lt;article&gt;</td>
+  <td>Bağımsız, kendi başına anlam taşıyan bir içerik bölümünü tanımlar.</td>
+  <td><pre>&lt;article&gt;
+  &lt;h2&gt;Makale Başlığı&lt;/h2&gt;
+  &lt;p&gt;Makale içeriği buraya gelir.&lt;/p&gt;
+&lt;/article&gt;</pre></td>
+  <td>HTML / Yapı</td>
+</tr>
+<tr>
+  <td>&lt;aside&gt;</td>
+  <td>Sayfa içeriğinden bağımsız, tamamlayıcı veya yan bilgi bölümü tanımlar (ör. kenar çubuğu, ek notlar).</td>
+  <td><pre>&lt;aside&gt;
+  &lt;h3&gt;Ek Bilgi&lt;/h3&gt;
+  &lt;p&gt;Bu, ana içerikten bağımsız bir yan not örneğidir.&lt;/p&gt;
+&lt;/aside&gt;</pre></td>
+  <td>HTML / Yapı</td>
+</tr>
+
+<tr>
+  <td>&lt;audio&gt;</td>
+  <td>Sayfaya gömülü ses içeriği ekler ve kullanıcıya oynatma kontrolleri sağlar.</td>
+  <td><pre>&lt;audio controls&gt;
+  &lt;source src="ses.mp3" type="audio/mpeg"&gt;
+  Tarayıcınız audio etiketini desteklemiyor.
+&lt;/audio&gt;</pre></td>
+  <td>HTML / Medya</td>
+</tr>
+
+<tr>
+  <td>&lt;base&gt;</td>
+  <td>Belgedeki tüm göreli (relative) URL’ler için temel URL ve hedefi belirler.</td>
+  <td><pre>&lt;head&gt;
+  &lt;base href="https://example.com/" target="_blank"&gt;
+&lt;/head&gt;</pre></td>
+  <td>HTML / Başlık</td>
+</tr>
+<tr>
+  <td>&lt;bdi&gt;</td>
+  <td>Dışındaki metin yönünden bağımsız olarak bir metin parçasını izole eder (metin yönü farklı olabilir).</td>
+  <td><pre>&lt;p&gt;Normal metin &lt;bdi&gt;متن عربی&lt;/bdi&gt; devam ediyor.&lt;/p&gt;</pre></td>
+  <td>HTML / Metin Yönü</td>
+</tr>
+<tr>
+  <td>&lt;bdo&gt;</td>
+  <td>Mevcut metin yönünü geçersiz kılar ve belirlenen yönde metin gösterir.</td>
+  <td><pre>&lt;p&gt;Normal metin &lt;bdo dir="rtl"&gt;Sağdan sola yazı&lt;/bdo&gt; devam ediyor.&lt;/p&gt;</pre></td>
+  <td>HTML / Metin Yönü</td>
+</tr>
+<tr>
+  <td>&lt;blockquote&gt;</td>
+  <td>Başka bir kaynaktan alınmış alıntı içeren bir bölümü tanımlar.</td>
+  <td><pre>&lt;blockquote cite="https://example.com"&gt;
+  Bu, başka bir kaynaktan alınmış alıntıdır.
+&lt;/blockquote&gt;</pre></td>
+  <td>HTML / Metin</td>
+</tr>
+<tr>
+  <td>&lt;body&gt;</td>
+  <td>Belgenin ana içeriğini tanımlar; tüm görünür içerikler bu etiketin içinde yer alır.</td>
+  <td><pre>&lt;body&gt;
+  &lt;h1&gt;Merhaba Dünya&lt;/h1&gt;
+  &lt;p&gt;Bu, sayfanın ana içeriğidir.&lt;/p&gt;
+&lt;/body&gt;</pre></td>
+  <td>HTML / Belge Yapısı</td>
+</tr>
+<tr>
+  <td>&lt;br&gt;</td>
+  <td>Tek satırlık bir boşluk (satır sonu) ekler.</td>
+  <td><pre>&lt;p&gt;Satır 1&lt;br&gt;Satır 2&lt;/p&gt;</pre></td>
+  <td>HTML / Metin</td>
+</tr>
+<tr>
+  <td>&lt;button&gt;</td>
+  <td>Tıklanabilir bir düğme (buton) tanımlar.</td>
+  <td><pre>&lt;button type="button"&gt;Tıkla Beni&lt;/button&gt;</pre></td>
+  <td>HTML / Form Kontrolü</td>
+</tr>
+<tr>
+  <td>&lt;canvas&gt;</td>
+  <td>Grafikleri anlık olarak çizmek için kullanılır (genellikle JavaScript ile).</td>
+  <td><pre>&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.fillStyle = "red";
+  ctx.fillRect(20, 20, 150, 50);
+&lt;/script&gt;</pre></td>
+  <td>HTML / Grafik</td>
+</tr>
+<tr>
+  <td>&lt;caption&gt;</td>
+  <td>Bir tablonun başlığını tanımlar ve tablo üzerinde görünür.</td>
+  <td><pre>&lt;table border="1"&gt;
+  &lt;caption&gt;Örnek Tablo Başlığı&lt;/caption&gt;
+  &lt;tr&gt;&lt;th&gt>Ad&lt;/th&gt;&lt;th&gt;Yaş&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Ali&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre></td>
+  <td>HTML / Tablo</td>
+</tr>
+<tr>
+  <td>&lt;cite&gt;</td>
+  <td>Bir eserin, kitabın, makalenin veya çalışmanın başlığını tanımlar.</td>
+  <td><pre>&lt;p&gt;Bu fikir &lt;cite&gt;Web Geliştirme Rehberi&lt;/cite&gt; kitabından alınmıştır.&lt;/p&gt;</pre></td>
+  <td>HTML / Metin</td>
+</tr>
+<tr>
+  <td>&lt;code&gt;</td>
+  <td>Bilgisayar kodu parçasını tanımlar ve genellikle monospace fontla gösterir.</td>
+  <td><pre>&lt;p&gt;JavaScript örneği: &lt;code&gt;alert('Merhaba Dünya');&lt;/code&gt;&lt;/p&gt;</pre></td>
+  <td>HTML / Kod</td>
+</tr>
+<tr>
+  <td>&lt;col&gt;</td>
+  <td>&lt;colgroup&gt; içindeki her sütun için stil ve özellikleri belirler.</td>
+  <td><pre>&lt;table border="1"&gt;
+  &lt;colgroup&gt;
+    &lt;col span="1" style="background-color:lightblue"&gt;
+    &lt;col span="1" style="background-color:lightgreen"&gt;
+  &lt;/colgroup&gt;
+  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre></td>
+  <td>HTML / Tablo</td>
+</tr>
+<tr>
+  <td>&lt;colgroup&gt;</td>
+  <td>Tablodaki bir veya birden fazla sütun için toplu stil veya özellikleri tanımlar.</td>
+  <td><pre>&lt;table border="1"&gt;
+  &lt;colgroup&gt;
+    &lt;col span="2" style="background-color:lightyellow"&gt;
+  &lt;/colgroup&gt;
+  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre></td>
+  <td>HTML / Tablo</td>
+</tr>
+<tr>
+  <td>&lt;data&gt;</td>
+  <td>Bir içeriğin makine tarafından okunabilir değerini ekler.</td>
+  <td><pre>&lt;p&gt;Yaşım: &lt;data value="30"&gt;30 yaş&lt;/data&gt;&lt;/p&gt;</pre></td>
+  <td>HTML / Veri</td>
+</tr>
+<tr>
+  <td>&lt;datalist&gt;</td>
+  <td>Bir giriş (input) alanı için önceden tanımlanmış seçenekler listesi sağlar.</td>
+  <td><pre>&lt;input list="renkler" name="renk"&gt;
+&lt;datalist id="renkler"&gt;
+  &lt;option value="Kırmızı"&gt;
+  &lt;option value="Mavi"&gt;
+  &lt;option value="Yeşil"&gt;
+&lt;/datalist&gt;</pre></td>
+  <td>HTML / Form Kontrolü</td>
+</tr>
+
+<tr>
+  <td>&lt;dd&gt;</td>
+  <td>Açıklama listesinde bir terimin değerini veya açıklamasını tanımlar.</td>
+  <td><pre>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Web sayfalarını oluşturmak için kullanılan işaretleme dili.&lt;/dd&gt;
+&lt;/dl&gt;</pre></td>
+  <td>HTML / Liste</td>
+</tr>
+<tr>
+  <td>&lt;del&gt;</td>
+  <td>Belgeden silinmiş metni tanımlar ve genellikle üstü çizili olarak gösterir.</td>
+  <td><pre>&lt;p&gt;Bu cümlede &lt;del&gt;eski&lt;/del&gt; yeni kelime kullanılmıştır.&lt;/p&gt;</pre></td>
+  <td>HTML / Metin</td>
+</tr>
+<tr>
+  <td>&lt;details&gt;</td>
+  <td>Kullanıcının görüntüleyip gizleyebileceği ek bilgileri tanımlar.</td>
+  <td><pre>&lt;details&gt;
+  &lt;summary&gt;Daha fazla bilgi&lt;/summary&gt;
+  Bu içerik kullanıcı tarafından açılıp kapatılabilir.
+&lt;/details&gt;</pre></td>
+  <td>HTML / Etkileşim</td>
+</tr>
+
+<tr>
+  <td>&lt;dfn&gt;</td>
+  <td>İçerik içinde tanımlanacak bir terimi belirtir.</td>
+  <td><pre>&lt;p&gt;HTML5 dilinde &lt;dfn&gt;section&lt;/dfn&gt; etiketi, belgede bağımsız bir bölüm oluşturur.&lt;/p&gt;</pre></td>
+  <td>HTML / Metin</td>
+</tr>
+
+<tr>
+  <td>&lt;dialog&gt;</td>
+  <td>Bir iletişim kutusu veya pencere tanımlar ve kullanıcı etkileşimi için açılıp kapanabilir.</td>
+  <td><pre>&lt;dialog id="myDialog"&gt;
+  Bu bir dialog kutusudur.
+  &lt;button onclick="document.getElementById('myDialog').close()"&gt;Kapat&lt;/button&gt;
+&lt;/dialog&gt;
+
+&lt;button onclick="document.getElementById('myDialog').showModal()"&gt;Dialogu Aç&lt;/button&gt;</pre></td>
+  <td>HTML / Etkileşim</td>
+</tr>
+<tr>
+  <td>&lt;div&gt;</td>
+  <td>Belge içinde bir bölüm veya konteyner tanımlar, içerik gruplamak için kullanılır.</td>
+  <td><pre>&lt;div style="background-color:lightgray; padding:10px;"&gt;
+  &lt;p&gt;Bu bir div içinde yer alan paragraftır.&lt;/p&gt;
+&lt;/div&gt;</pre></td>
+  <td>HTML / Bölüm</td>
+</tr>
+<tr>
+  <td>&lt;dl&gt;</td>
+  <td>Açıklama listesi (description list) tanımlar ve terim-değer çiftlerini içerir.</td>
+  <td><pre>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Web sayfalarını oluşturmak için kullanılan işaretleme dili.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Web sayfalarının stilini tanımlayan dil.&lt;/dd&gt;
+&lt;/dl&gt;</pre></td>
+  <td>HTML / Liste</td>
+</tr>
+<tr>
+  <td>&lt;dt&gt;</td>
+  <td>Açıklama listesinde (description list) bir terim veya adı tanımlar.</td>
+  <td><pre>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Web sayfalarını oluşturmak için kullanılan işaretleme dili.&lt;/dd&gt;
+&lt;/dl&gt;</pre></td>
+  <td>HTML / Liste</td>
+</tr>
+<tr>
+  <td>&lt;em&gt;</td>
+  <td>Vurgulanmış (emphasized) metni tanımlar ve genellikle italik olarak gösterilir.</td>
+  <td><pre>&lt;p&gt;Bu bir &lt;em&gt;önemli&lt;/em&gt; paragraftır.&lt;/p&gt;</pre></td>
+  <td>HTML / Metin</td>
+</tr>
+<tr>
+  <td>&lt;embed&gt;</td>
+  <td>Dış bir uygulama veya multimedya içeriği gömmek için bir konteyner tanımlar.</td>
+  <td><pre>&lt;embed src="video.mp4" width="400" height="300" type="video/mp4"&gt;</pre></td>
+  <td>HTML / Medya</td>
+</tr>
+<tr>
+  <td>&lt;fieldset&gt;</td>
+  <td>Formdaki ilgili alanları gruplamak için kullanılır ve genellikle bir başlık (<legend>) ile birlikte gösterilir.</td>
+  <td><pre>&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Kişisel Bilgiler&lt;/legend&gt;
+    &lt;label&gt;Ad: &lt;/label&gt;&lt;input type="text"&gt;&lt;br&gt;
+    &lt;label&gt;Soyad: &lt;/label&gt;&lt;input type="text"&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</pre></td>
+  <td>HTML / Form</td>
+</tr>
+<tr>
+  <td>&lt;figcaption&gt;</td>
+  <td>&lt;figure&gt; elemanı için bir başlık veya açıklama tanımlar.</td>
+  <td><pre>&lt;figure&gt;
+  &lt;img src="resim.jpg" alt="Örnek Resim"&gt;
+  &lt;figcaption&gt;Bu resim bir örnek görseldir.&lt;/figcaption&gt;
+&lt;/figure&gt;</pre></td>
+  <td>HTML / Görsel</td>
+</tr>
+<tr>
+  <td>&lt;figure&gt;</td>
+  <td>Kendi başına anlam taşıyan içerik (ör. resim, çizim, grafik) tanımlar ve genellikle bir başlık (<figcaption>) ile birlikte kullanılır.</td>
+  <td><pre>&lt;figure&gt;
+  &lt;img src="resim.jpg" alt="Örnek Resim"&gt;
+  &lt;figcaption&gt;Bu resim bir örnek görseldir.&lt;/figcaption&gt;
+&lt;/figure&gt;</pre></td>
+  <td>HTML / Görsel</td>
+</tr>
+<tr>
+  <td>&lt;footer&gt;</td>
+  <td>Belge veya bölüm için alt bilgi (footer) tanımlar. Genellikle iletişim bilgisi, telif hakkı veya navigasyon linkleri içerir.</td>
+  <td><pre>&lt;footer&gt;
+  &lt;p&gt;© 2026 Örnek Şirket. Tüm hakları saklıdır.&lt;/p&gt;
+&lt;/footer&gt;</pre></td>
+  <td>HTML / Bölüm</td>
+</tr>
+
+<tr>
+  <td>&lt;form&gt;</td>
+  <td>Kullanıcıdan veri girişi almak için bir HTML formu tanımlar.</td>
+  <td><pre>&lt;form action="/submit" method="post"&gt;
+  &lt;label&gt;Ad: &lt;/label&gt;&lt;input type="text" name="ad"&gt;&lt;br&gt;
+  &lt;label&gt;E-posta: &lt;/label&gt;&lt;input type="email" name="email"&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Gönder&lt;/button&gt;
+&lt;/form&gt;</pre></td>
+  <td>HTML / Form</td>
+</tr>
+<tr>
+  <td>&lt;h1&gt; … &lt;h6&gt;</td>
+  <td>HTML başlıklarını tanımlar. &lt;h1&gt; en önemli başlık, &lt;h6&gt; en az önemli başlıktır.</td>
+  <td><pre>&lt;h1&gt;Ana Başlık&lt;/h1&gt;
+&lt;h2&gt;Alt Başlık 1&lt;/h2&gt;
+&lt;h3&gt;Alt Başlık 2&lt;/h3&gt;</pre></td>
+  <td>HTML / Başlık</td>
+</tr>
+
+
+
+
+
       </tbody>
     </table>
   </div>
 </main>
 </div>
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 <!-- DataTables JS -->
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script>
-  $(document).ready(function() {
-    $('#keywordsTable').DataTable({
-      "paging": true,
-      "searching": true,
-      "info": true
-    });
+$(document).ready(function() {
+  $('#keywordsTable').DataTable({
+    paging: true,
+    searching: true,
+    info: true,
+    lengthChange: false,
+    language: {
+      search: "_INPUT_",
+      searchPlaceholder: "Ara..."
+    },
+    dom:
+      "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+      "<'row'<'col-sm-12'tr>>" +
+      "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>"
   });
+});
 </script>
 
 <div id="footer-placeholder"></div>
