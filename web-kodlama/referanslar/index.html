@@ -95,12 +95,84 @@ fetch("https://raw.githubusercontent.com/bandanee/root/main/import/head.html")
 </div>
 
 <!-- Main içerik -->
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+<!-- Main içerik -->
 <div class="container my-4">
 <main class="col-12 col-lg-9 mx-auto">
-  <h1>Açık Sayfalar</h1>
-  <p>Bu sayfa, web derslerinde rehber olarak kullanılacak ve kavramların açıklamalarını içeren referans sözlük görevini üstlenmektedir. Web derslerinde öğrenme sürecini destekleyen örnekler, açıklamalar ve ipuçları burada bulunabilir.</p>
+  <h1>Açık Sayfalar – Web Dersleri Sözlüğü</h1>
+  <p>Bu tabloda web derslerinde kullanılan HTML/CSS/JS kavramları, açıklamaları, örnek kodları ve kullanım alanları listelenmektedir.</p>
+
+  <div class="table-responsive">
+    <table id="keywordsTable" class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Keyword / Tag</th>
+          <th>Açıklama</th>
+          <th>Örnek Kod</th>
+          <th>Kategori</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;wbr&gt;</td>
+          <td>Defines a possible line-break within text.</td>
+          <td><pre>&lt;p&gt;This is a very<wbr>longword&lt;/p&gt;</pre></td>
+          <td>HTML / Metin</td>
+        </tr>
+        <tr>
+          <td>&lt;pre&gt;</td>
+          <td>Represents preformatted text, preserves whitespace and line breaks.</td>
+          <td><pre>&lt;pre&gt;Line 1
+Line 2
+Line 3&lt;/pre&gt;</pre></td>
+          <td>HTML / Metin</td>
+        </tr>
+        <tr>
+          <td>&lt;code&gt;</td>
+          <td>Represents inline code snippets inside text.</td>
+          <td><pre>&lt;p&gt;Use &lt;code&gt;alert('Hi')&lt;/code&gt;&lt;/p&gt;</pre></td>
+          <td>HTML / Kod</td>
+        </tr>
+        <tr>
+          <td>&lt;strong&gt;</td>
+          <td>Defines important or bold text.</td>
+          <td><pre>&lt;p&gt;&lt;strong&gt;Important!&lt;/strong&gt;&lt;/p&gt;</pre></td>
+          <td>HTML / Metin</td>
+        </tr>
+        <tr>
+          <td>&lt;em&gt;</td>
+          <td>Defines emphasized text (usually italic).</td>
+          <td><pre>&lt;p&gt;&lt;em&gt;Emphasis&lt;/em&gt;&lt;/p&gt;</pre></td>
+          <td>HTML / Metin</td>
+        </tr>
+        <tr>
+          <td>&lt;br&gt;</td>
+          <td>Inserts a line break.</td>
+          <td><pre>&lt;p&gt;Line1&lt;br&gt;Line2&lt;/p&gt;</pre></td>
+          <td>HTML / Metin</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </main>
 </div>
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#keywordsTable').DataTable({
+      "paging": true,
+      "searching": true,
+      "info": true
+    });
+  });
+</script>
 
 <div id="footer-placeholder"></div>
 <script>
